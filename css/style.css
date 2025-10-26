@@ -656,7 +656,8 @@ h3.my-profession
     max-width: 50%;
 }
 .portofolio .desain .desain-file1,
-.portofolio .desain .desain-file2
+.portofolio .desain .desain-file2,
+.portofolio .desain .desain-file3
 {
     background-color: var(--skin-color);
     height: 20vh;
