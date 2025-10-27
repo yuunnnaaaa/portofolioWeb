@@ -657,7 +657,8 @@ h3.my-profession
 }
 .portofolio .desain .desain-file1,
 .portofolio .desain .desain-file2,
-.portofolio .desain .desain-file3
+.portofolio .desain .desain-file3,
+.portofolio .desain .desain-file4
 {
     background-color: var(--skin-color);
     height: 20vh;
@@ -672,17 +673,23 @@ h3.my-profession
 }
 .portofolio .desain .desain-file2:hover
 {
-    background-image: url(../images/Screenshot\ 2025-04-21\ 120038.png);
+    background-image: url(../images/Educourse_Kelompok1Django.jpeg);
     opacity: 0.8;
 }
 .portofolio .desain .desain-file3:hover
+{
+    background-image: url(../images/Figma_Cupah.png);
+    opacity: 0.8;
+}
+.portofolio .desain .desain-file4:hover
 {
     background-image: url(../images/ProdukDigital.png);
     opacity: 0.8;
 }
 .portofolio .desain .desain-file1 .desain-title,
 .portofolio .desain .desain-file2 .desain-title,
-.portofolio .desain .desain-file3 .desain-title
+.portofolio .desain .desain-file3 .desain-title,
+.portofolio .desain .desain-file4 .desain-title
 {
     text-align: center;
     padding-top: 60px;
@@ -691,7 +698,8 @@ h3.my-profession
 }
 .portofolio .desain .desain-file1 .desain-title:hover,
 .portofolio .desain .desain-file2 .desain-title:hover,
-.portofolio .desain .desain-file3 .desain-title:hover
+.portofolio .desain .desain-file3 .desain-title:hover,
+.portofolio .desain .desain-file4 .desain-title:hover
 {
     transform: scale(1.1);
 }
