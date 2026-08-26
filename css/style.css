@@ -639,74 +639,264 @@ h3.my-profession
     color: var(--text-black-700);
     line-height: 25px;
 }
-/* portofolio */
-.portofolio .portofolio-heading
-{
-    color: var(--text-black-900);
+
+/* Styles dasar untuk Card */
+.service-item-inner {
+   background: #ffffff;
+   border: 1px solid #e0e0e0;
+   border-radius: 10px;
+   padding: 30px 20px;
+   text-align: center;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: hidden;
 }
 
-.portofolio .desain
-{
-    flex: 0 0 50%;
-    max-width: 50%;
+/* Hover Effect pada Card */
+.service-item-inner:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+   border-color: #3b82f6;
 }
-.portofolio .desain-text
-{
-    flex: 0 0 50%;
-    max-width: 50%;
+
+.service-item-inner .icon {
+   font-size: 36px;
+   color: #3b82f6;
+   margin-bottom: 15px;
+   transition: transform 0.3s ease;
 }
-.portofolio .desain .desain-file1,
-.portofolio .desain .desain-file2,
-.portofolio .desain .desain-file3,
-.portofolio .desain .desain-file4
-{
-    background-color: var(--skin-color);
-    height: 20vh;
-    margin: 10px 50px;
-    opacity: 0.7;
-    width: 80%;
+
+.service-item-inner:hover .icon {
+   transform: scale(1.15);
 }
-.portofolio .desain .desain-file1:hover
-{
-    background-image: url(../images/KetahunJaya.jpg);
-    opacity: 0.8;
+
+.click-hint {
+   display: inline-block;
+   margin-top: 15px;
+   font-size: 13px;
+   font-weight: 600;
+   color: #3b82f6;
+   opacity: 0.8;
+   transition: opacity 0.3s;
 }
-.portofolio .desain .desain-file2:hover
-{
-    background-image: url(../images/Educourse_Kelompok1Django.jpeg);
-    opacity: 0.8;
+
+.service-item-inner:hover .click-hint {
+   opacity: 1;
 }
-.portofolio .desain .desain-file3:hover
-{
-    background-image: url(../images/Figma_Cupah.png);
-    opacity: 0.8;
+
+/* Styles Modal Pop-up */
+.modal-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.6);
+   backdrop-filter: blur(4px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.3s ease;
+   z-index: 9999;
 }
-.portofolio .desain .desain-file4:hover
-{
-    background-image: url(../images/ProdukDigital.png);
-    opacity: 0.8;
+
+.modal-overlay.active {
+   opacity: 1;
+   visibility: visible;
 }
-.portofolio .desain .desain-file1 .desain-title,
-.portofolio .desain .desain-file2 .desain-title,
-.portofolio .desain .desain-file3 .desain-title,
-.portofolio .desain .desain-file4 .desain-title
-{
-    text-align: center;
-    padding-top: 60px;
-    font-size: 20px;
-    color: var(--bg-black-900);
+
+.modal-content {
+   background: #ffffff;
+   padding: 30px;
+   border-radius: 12px;
+   max-width: 700px;
+   width: 90%;
+   max-height: 85vh;
+   overflow-y: auto;
+   position: relative;
+   transform: scale(0.8);
+   transition: transform 0.3s ease;
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
-.portofolio .desain .desain-file1 .desain-title:hover,
-.portofolio .desain .desain-file2 .desain-title:hover,
-.portofolio .desain .desain-file3 .desain-title:hover,
-.portofolio .desain .desain-file4 .desain-title:hover
-{
-    transform: scale(1.1);
+
+.modal-overlay.active .modal-content {
+   transform: scale(1);
 }
-.portofolio .desain-text .text p
-{
-    padding: 20px 0px;
-    color: var(--text-black-700);
+
+.modal-close {
+   position: absolute;
+   top: 15px;
+   right: 20px;
+   background: none;
+   border: none;
+   font-size: 28px;
+   cursor: pointer;
+   color: #666;
+}
+
+.modal-subtitle {
+   color: #666;
+   margin-bottom: 20px;
+}
+
+/* Grid Proyek di dalam Modal */
+.project-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 20px;
+   margin-top: 20px;
+}
+
+.project-card {
+   border-radius: 8px;
+   overflow: hidden;
+   border: 1px solid #eee;
+   background: #f9fafb;
+   padding: 10px;
+   text-align: left;
+}
+
+.project-card img {
+   width: 100%;
+   height: auto;
+   border-radius: 6px;
+   object-fit: cover;
+}
+
+.project-card h4 {
+   margin: 10px 0 5px;
+   font-size: 16px;
+}
+
+.project-card p {
+   font-size: 13px;
+   color: #777;
+   margin: 0;
+}
+/* portofolio */
+/* Container Utama Bento Grid */
+.bento-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 20px;
+   padding: 15px 0;
+}
+
+/* Subtitle Portofolio agar terlihat di Dark Mode */
+.portfolio-heading h3 {
+   color: var(--text-black-900);
+   font-size: 1.5rem;
+   margin-bottom: 15px;
+}
+
+
+/* Card Bento Item */
+.bento-item {
+   background: var(--bg-black-100);
+   border: 1px solid var(--bg-black-50);
+   border-radius: 16px;
+   padding: 24px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   position: relative;
+   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect pada Bento Item */
+.bento-item:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.2);
+   border-color: var(--skin-color, #3b82f6);
+}
+
+/* Featured/Large Item */
+.bento-item.bento-large {
+   grid-column: span 2;
+}
+
+/* Content Inside Card */
+.bento-content h4 {
+   font-size: 1.25rem;
+   font-weight: 700;
+   color: var(--text-black-900);
+   margin: 12px 0 8px 0;
+}
+
+.bento-content p {
+   font-size: 0.95rem;
+   color: var(--text-black-700);
+   line-height: 1.6;
+   margin: 0;
+}
+
+
+/* Custom Badges/Tags (Menyesuaikan latar belakang gelap) */
+.bento-tag {
+   display: inline-block;
+   padding: 4px 12px;
+   border-radius: 20px;
+   font-size: 0.75rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+}
+
+.bento-tag.ongoing {
+   background-color: rgba(217, 119, 6, 0.2);
+   color: #f59e0b;
+}
+
+.bento-tag.badge {
+   background-color: rgba(37, 99, 235, 0.2);
+   color: #60a5fa;
+}
+
+.bento-tag.figma {
+   background-color: rgba(219, 39, 119, 0.2);
+   color: #f472b6;
+}
+
+.bento-tag.product {
+   background-color: rgba(22, 163, 74, 0.2);
+   color: #4ade80;
+}
+
+/* Button Link Figma */
+.bento-link {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   margin-top: 15px;
+   padding: 8px 16px;
+   background-color: var(--skin-color, #ec4899);
+   color: #ffffff;
+   border-radius: 8px;
+   font-size: 0.85rem;
+   font-weight: 600;
+   text-decoration: none;
+   transition: opacity 0.2s ease;
+}
+
+.bento-link:hover {
+   opacity: 0.9;
+   color: #ffffff;
+}
+
+
+/* Responsive Support */
+@media (max-width: 768px) {
+   .bento-grid {
+      grid-template-columns: 1fr;
+   }
+   
+   .bento-item.bento-large {
+      grid-column: span 1;
+   }
 }
 
 /* contact */

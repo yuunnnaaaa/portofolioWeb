@@ -90,3 +90,27 @@ const nav = document.querySelector(".nav"),
                 allSection[i].classList.toggle("open");
             }
           }
+          
+function openModal(modalId) {
+   const modal = document.getElementById(modalId);
+   if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Mencegah scrolling halaman di belakang modal
+   }
+}
+
+function closeModal(modalId) {
+   const modal = document.getElementById(modalId);
+   if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto'; // Mengembalikan scroll
+   }
+}
+
+// Tutup modal jika pengguna mengklik area luar modal (overlay)
+window.onclick = function(event) {
+   if (event.target.classList.contains('modal-overlay')) {
+      event.target.classList.remove('active');
+      document.body.style.overflow = 'auto';
+   }
+};
