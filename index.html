@@ -410,55 +410,51 @@
                   <!-- Contact form -->
                   <div class="row">
                      <div class="contact-form padd-15">
-                        <!-- Form Netlify -->
-                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                           
-                           <!-- Hidden Input wajib untuk identifikasi form di Netlify -->
-                           <input type="hidden" name="form-name" value="contact" />
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                     
+                     <input type="hidden" name="access_key" value="7c3200fc-9f30-4a67-b6b9-a1d75007ca2d">
 
-                           <!-- Honeypot Field (Perangkap Bot): Disembunyikan secara visual dari user -->
-                           <p class="hidden-field" style="display:none;">
-                              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-                           </p>
+                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                           <div class="row">
-                              <div class="form-item col-6 padd-15">
-                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Name" required autocomplete="name">
-                                 </div>
-                              </div>
-                              <div class="form-item col-6 padd-15">
-                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" required autocomplete="email">
-                                 </div>
-                              </div>
+                     <!-- Input Form Kamu -->
+                     <div class="row">
+                        <div class="form-item col-6 padd-15">
+                           <div class="form-group">
+                              <input type="text" name="name" class="form-control" placeholder="Name" required autocomplete="name">
                            </div>
-
-                           <div class="row">
-                              <div class="form-item col-12 padd-15">
-                                 <div class="form-group">
-                                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                                 </div>
-                              </div>
+                        </div>
+                        <div class="form-item col-6 padd-15">
+                           <div class="form-group">
+                              <input type="email" name="email" class="form-control" placeholder="Email" required autocomplete="email">
                            </div>
+                        </div>
+                     </div>
 
-                           <div class="row">
-                              <div class="form-item col-12 padd-15">
-                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" placeholder="Message" required rows="5"></textarea>
-                                 </div>
-                              </div>
+                     <div class="row">
+                        <div class="form-item col-12 padd-15">
+                           <div class="form-group">
+                              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
                            </div>
+                        </div>
+                     </div>
 
-                           <div class="row">
-                              <div class="form-item col-12 padd-15">
-                                 <div class="form-group">
-                                    <button type="submit" class="btn">Send Message</button>
-                                 </div>
-                              </div>
+                     <div class="row">
+                        <div class="form-item col-12 padd-15">
+                           <div class="form-group">
+                              <textarea name="message" class="form-control" placeholder="Message" required rows="5"></textarea>
                            </div>
+                        </div>
+                     </div>
 
-                        </form>
+                     <div class="row">
+                        <div class="form-item col-12 padd-15">
+                           <div class="form-group">
+                              <button type="submit" class="btn">Send Message</button>
+                           </div>
+                        </div>
+                     </div>
+
+                  </form>
                      </div>
                   </div>
                   </div>
